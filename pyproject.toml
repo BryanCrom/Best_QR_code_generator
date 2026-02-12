@@ -1,0 +1,19 @@
+[project]
+name = "best-qr-code-generator"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Bryan", email = "BryanCrombach@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "qrcode>=8.2",
+]
+
+[project.scripts]
+dev = "best_qr_code_generator.__main__:main"
+
+[build-system]
+requires = ["uv_build>=0.9.28,<0.10.0"]
+build-backend = "uv_build"
