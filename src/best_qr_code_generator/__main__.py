@@ -1,7 +1,4 @@
-import qrcode
+from .views.HomeView import HomeView
 
 def main() -> None:
-    url = ""
-    img = qrcode.make(url)
-    img.save("qrcode.png")
-    print("success")
+    HomeView()
