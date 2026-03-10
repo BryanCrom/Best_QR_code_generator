@@ -1,7 +1,11 @@
 from PyQt6.QtWidgets import QPushButton
 
-class Button(QPushButton):
-    def __init__(self, text: str):
+from best_qr_code_generator.controllers.Controller import on_enter
+from best_qr_code_generator.views.components.InputField import InputField
+
+
+class EnterButton(QPushButton):
+    def __init__(self, text: str, rounded_rect_widget, input_field):
         super().__init__(text)
 
         self.setStyleSheet("""
@@ -18,3 +22,4 @@ class Button(QPushButton):
             }
             """)
         self.setFixedWidth(150)
+        self.clicked.connect(lambda: on_enter(input_field.get_text(), rounded_rect_widget.get_image_widget()))

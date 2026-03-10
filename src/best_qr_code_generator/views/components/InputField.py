@@ -18,3 +18,7 @@ class InputField(QLineEdit):
         """)
         self.setFixedWidth(300)
 
+    def get_text(self) -> str:
+        return self.text()
+
+
