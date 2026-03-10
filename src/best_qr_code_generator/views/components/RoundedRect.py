@@ -3,9 +3,8 @@ from PyQt6.QtWidgets import QFrame, QVBoxLayout
 
 from best_qr_code_generator.views.components.QrImage import QrImage
 
-
 class RoundedRect(QFrame):
-    def __init__(self, width: int, height: int):
+    def __init__(self, width: int, height: int) -> None:
         super().__init__()
 
         self.setStyleSheet("background-color: rgb(141, 153, 174);")

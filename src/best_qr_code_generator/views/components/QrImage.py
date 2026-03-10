@@ -13,3 +13,6 @@ class QrImage(QLabel):
     def set_pixmap(self, image) -> None:
         pixmap = QPixmap.fromImage(image)
         self.setPixmap(pixmap)
+
+    def get_pixmap(self) -> QPixmap:
+        return self.pixmap()

@@ -1,11 +1,11 @@
 from PyQt6.QtWidgets import QPushButton
 
 from best_qr_code_generator.controllers.Controller import on_enter
-from best_qr_code_generator.views.components.InputField import InputField
+from best_qr_code_generator.views.components.SaveButton import SaveButton
 
 
 class EnterButton(QPushButton):
-    def __init__(self, text: str, rounded_rect_widget, input_field):
+    def __init__(self, text: str, rounded_rect_widget, input_field, save_button: SaveButton) -> None:
         super().__init__(text)
 
         self.setStyleSheet("""
@@ -22,4 +22,4 @@ class EnterButton(QPushButton):
             }
             """)
         self.setFixedWidth(150)
-        self.clicked.connect(lambda: on_enter(input_field.get_text(), rounded_rect_widget.get_image_widget()))
+        self.clicked.connect(lambda: on_enter(input_field.get_text(), rounded_rect_widget.get_image_widget(), save_button))

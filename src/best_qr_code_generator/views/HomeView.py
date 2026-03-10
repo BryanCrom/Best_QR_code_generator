@@ -5,6 +5,7 @@ from PyQt6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
 from best_qr_code_generator.views.components.EnterButton import EnterButton
 from best_qr_code_generator.views.components.InputField import InputField
 from best_qr_code_generator.views.components.RoundedRect import RoundedRect
+from best_qr_code_generator.views.components.SaveButton import SaveButton
 from best_qr_code_generator.views.components.Title import Title
 
 
@@ -26,12 +27,16 @@ class HomeView(QMainWindow):
         self.layout.setContentsMargins(0, 0, 0, 0)
         self.rounded_rect = RoundedRect(200, 200)
         self.input_field = InputField()
+        self.save_button = SaveButton("SAVE", self.rounded_rect)
+        self.enter_button = EnterButton("ENTER", self.rounded_rect, self.input_field, self.save_button)
+
         self.layout.addStretch()
 
         self.layout.addWidget(Title("QR Code Generator"), alignment=Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.input_field, alignment=Qt.AlignmentFlag.AlignCenter)
-        self.layout.addWidget(EnterButton("ENTER", self.rounded_rect, self.input_field), alignment=Qt.AlignmentFlag.AlignCenter)
+        self.layout.addWidget(self.enter_button, alignment=Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.rounded_rect, alignment=Qt.AlignmentFlag.AlignCenter)
+        self.layout.addWidget(self.save_button, alignment=Qt.AlignmentFlag.AlignCenter)
 
         self.layout.addStretch()
 
