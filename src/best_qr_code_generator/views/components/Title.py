@@ -3,11 +3,13 @@
 
 from PyQt6.QtWidgets import QLabel
 
+
 class Title(QLabel):
     """
     Title is a QLabel that displays the title of the application on the home view.
     Inherits from QLabel to support the PyQt GUI.
     """
+
     def __init__(self, text: str) -> None:
         """
         Initialises the Title by setting up the properties for displaying the title text.

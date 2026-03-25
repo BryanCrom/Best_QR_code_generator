@@ -24,6 +24,7 @@ class HomeView(QMainWindow):
     - SaveButton: A button that allows the user to save the generated QR code as an image file.
     - EnterButton: A button that triggers the generation of the QR code based on the text entered in the InputField.
     """
+
     def __init__(self):
         """
         Initializes the HomeView by setting up the window properties and adding the components to the layout.
@@ -42,7 +43,9 @@ class HomeView(QMainWindow):
         self.input_field = InputField()
         self.rect = Rect(200, 200)
         self.save_button = SaveButton("SAVE", self.rect)
-        self.enter_button = EnterButton("ENTER", self.rect, self.input_field, self.save_button)
+        self.enter_button = EnterButton(
+            "ENTER", self.rect, self.input_field, self.save_button
+        )
 
         self.layout = QVBoxLayout(self.central_widget)
 
@@ -56,4 +59,3 @@ class HomeView(QMainWindow):
         self.layout.addWidget(self.save_button, alignment=Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.enter_button, alignment=Qt.AlignmentFlag.AlignCenter)
         self.layout.addStretch()
-

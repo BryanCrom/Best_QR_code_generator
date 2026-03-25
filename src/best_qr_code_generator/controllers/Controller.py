@@ -3,6 +3,7 @@
 
 from best_qr_code_generator.models.qr_generator import create_qr_code
 
+
 def on_enter(url: str, image_widget, save_button) -> None:
     """
     Controller function to handle the event when the user presses the "Enter" key after inputting a URL.

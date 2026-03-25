@@ -4,11 +4,13 @@
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QLabel
 
+
 class QrImage(QLabel):
     """
     This class is responsible for displaying the generated QR code as an image.
     Inherits from QLabel to support the PyQt GUI.
     """
+
     def __init__(self) -> None:
         """
         Initializes the QrImage by setting up the properties for displaying the QR code image.

@@ -12,7 +12,10 @@ class EnterButton(QPushButton):
     Enter button component that triggers the generation of the QR code based on the text entered in the InputField.
     Inherits from QPushButton to support the PyQt GUI.
     """
-    def __init__(self, text: str, rect_widget, input_field, save_button: SaveButton) -> None:
+
+    def __init__(
+        self, text: str, rect_widget, input_field, save_button: SaveButton
+    ) -> None:
         """
         Initializes the EnterButton by setting up the button properties and connecting the click event to the on_enter function.
 
@@ -40,4 +43,8 @@ class EnterButton(QPushButton):
             }
             """)
         self.setFixedWidth(150)
-        self.clicked.connect(lambda: on_enter(input_field.get_text(), rect_widget.get_image_widget(), save_button))
+        self.clicked.connect(
+            lambda: on_enter(
+                input_field.get_text(), rect_widget.get_image_widget(), save_button
+            )
+        )

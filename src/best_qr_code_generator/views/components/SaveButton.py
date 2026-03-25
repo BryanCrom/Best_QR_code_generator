@@ -3,6 +3,7 @@
 
 from PyQt6.QtWidgets import QPushButton, QFileDialog
 
+
 class SaveButton(QPushButton):
     """
     SaveButton is a button that allows the user to save the generated QR code as an image file.
@@ -11,6 +12,7 @@ class SaveButton(QPushButton):
     attributes:
     - rect (Rect): The Rect widget that contains the QrImage widget, which displays the generated QR code.
     """
+
     def __init__(self, text: str, rect) -> None:
         """
         Initialises the SaveButton by setting up the button properties and connecting the click event to the on_save function.

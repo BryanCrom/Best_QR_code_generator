@@ -6,6 +6,7 @@ from PyQt6.QtWidgets import QFrame, QVBoxLayout
 
 from best_qr_code_generator.views.components.QrImage import QrImage
 
+
 class Rect(QFrame):
     """
     Rect is a container widget that holds the QrImage widget, which displays the generated QR code.
@@ -14,6 +15,7 @@ class Rect(QFrame):
     attributes:
     - image (QrImage): The QrImage widget that displays the generated QR code.
     """
+
     def __init__(self, width: int, height: int) -> None:
         """
         Initializes the Rect by setting up the properties for the container.

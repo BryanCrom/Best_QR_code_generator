@@ -7,6 +7,7 @@ from PyQt6.QtWidgets import QApplication
 
 from .views.HomeView import HomeView
 
+
 def main() -> None:
     """
     Entry point for the application.
