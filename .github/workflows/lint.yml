@@ -11,7 +11,9 @@ on:
 
 jobs:
   lint:
+    name: Ruff lint
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -22,14 +24,17 @@ jobs:
         python-version: "3.13"
         cache: "pip"
 
-    - name: Install ruff
-      run: pip install ruff
+    - name: install uv
+      uses: astral-sh/setup-uv@v2
+
+    - name: Install dev dependencies
+      run: uv sync --dev
 
     - name: Run check
-      run: ruff check . --output-format=github
+      run: uv run ruff check . --output-format=github
 
     - name: Run format
-      run: ruff format . --check
+      run: uv run ruff format . --check
 
 
 
