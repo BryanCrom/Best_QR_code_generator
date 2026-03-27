@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    name: run tests
+    name: Run tests
     runs-on: ubuntu-latest
 
     steps:
@@ -21,11 +21,28 @@ jobs:
     - name: Set up uv
       uses: astral-sh/setup-uv@v5
 
+    - name: Install system dependencies
+      run:  |
+          sudo apt-get update
+          sudo apt-get install -y \
+            xvfb \
+            libxkbcommon-x11-0 \
+            libglib2.0-0 \
+            libegl1 \
+            libdbus-1-3 \
+            libxcb-icccm4 \
+            libxcb-image0 \
+            libxcb-keysyms1 \
+            libxcb-randr0 \
+            libxcb-render-util0 \
+            libxcb-xinerama0 \
+            libxcb-xfixes0
+
     - name: Install dependencies
       run: uv sync --dev
 
-    - name: install virtual display
+    - name: Install virtual display
       run: sudo apt-get install -y xvfb
 
-    - name: start tests
+    - name: Start tests
       run: xvfb-run uv run pytest -v --tb=short --color=yes

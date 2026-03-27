@@ -31,4 +31,3 @@ class TestModel:
         assert sample_qr_code.width() > 0
         assert sample_qr_code.height() > 0
         assert sample_qr_code.height() == sample_qr_code.width()
-

@@ -71,14 +71,17 @@ class TestComponents:
 
         assert setup_gui.rect.image.get_pixmap() is not None
 
-        #change the pixmap of the image widget to the sample QR code and check if it is set correctly
+        # change the pixmap of the image widget to the sample QR code and check if it is set correctly
         setup_gui.rect.image.set_pixmap(sample_qr_code)
 
         assert setup_gui.rect.image.pixmap() is not None
         assert not setup_gui.rect.image.pixmap().isNull()
         assert setup_gui.rect.image.pixmap().size().width() > 0
         assert setup_gui.rect.image.pixmap().size().height() > 0
-        assert setup_gui.rect.image.pixmap().size().width() == setup_gui.rect.image.pixmap().size().height()
+        assert (
+            setup_gui.rect.image.pixmap().size().width()
+            == setup_gui.rect.image.pixmap().size().height()
+        )
 
     def test_input_field(self, qtbot, setup_gui):
         """
@@ -121,7 +124,9 @@ class TestComponents:
         qtbot.mouseClick(setup_gui.enter_button, Qt.MouseButton.LeftButton)
         assert setup_gui.save_button.isEnabled()
 
-        with patch("best_qr_code_generator.views.components.SaveButton.QFileDialog.getSaveFileName") as mock_dialog:
+        with patch(
+            "best_qr_code_generator.views.components.SaveButton.QFileDialog.getSaveFileName"
+        ) as mock_dialog:
             mock_dialog.return_value = ("test.png", "PNG Files (*.png)")
             qtbot.mouseClick(setup_gui.save_button, Qt.MouseButton.LeftButton)
             assert mock_dialog.called
@@ -145,16 +150,9 @@ class TestComponents:
         assert not setup_gui.rect.image.pixmap().isNull()
         assert setup_gui.rect.image.pixmap().size().width() > 0
         assert setup_gui.rect.image.pixmap().size().height() > 0
-        assert setup_gui.rect.image.pixmap().size().width() == setup_gui.rect.image.pixmap().size().height()
+        assert (
+            setup_gui.rect.image.pixmap().size().width()
+            == setup_gui.rect.image.pixmap().size().height()
+        )
 
         assert setup_gui.save_button.isEnabled()
-
-
-
-
-
-
-
-
-
-

@@ -36,8 +36,10 @@ class HomeView(QMainWindow):
         self.setWindowTitle("QR Code Generator")
         self.setFixedSize(400, 500)
         self.setStyleSheet("background-color: #2B2D42;")
-        with resources.as_file(resources.files("best_qr_code_generator.assets").joinpath("logo.svg")) as logo_path:
-             self.setWindowIcon(QIcon(str(logo_path)))
+        with resources.as_file(
+            resources.files("best_qr_code_generator.assets").joinpath("logo.svg")
+        ) as logo_path:
+            self.setWindowIcon(QIcon(str(logo_path)))
 
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)

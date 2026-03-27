@@ -21,6 +21,7 @@ def setup_gui(qtbot):
     window.show()
     yield window
 
+
 @pytest.fixture
 def sample_qr_code() -> QImage:
     """

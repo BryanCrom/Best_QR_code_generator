@@ -1,6 +1,7 @@
 # Purpose: contains the tests for the view of the best QR code generator application.
 # Authors: Bryan Crombach
 
+
 class TestView:
     """
     Class that contains the tests for the view of the best QR code generator application.
