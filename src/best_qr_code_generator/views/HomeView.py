@@ -11,6 +11,8 @@ from best_qr_code_generator.views.components.Rect import Rect
 from best_qr_code_generator.views.components.SaveButton import SaveButton
 from best_qr_code_generator.views.components.Title import Title
 
+from importlib import resources
+
 
 class HomeView(QMainWindow):
     """
@@ -34,7 +36,8 @@ class HomeView(QMainWindow):
         self.setWindowTitle("QR Code Generator")
         self.setFixedSize(400, 500)
         self.setStyleSheet("background-color: #2B2D42;")
-        self.setWindowIcon(QIcon("src/assets/logo.svg"))
+        with resources.as_file(resources.files("best_qr_code_generator.assets").joinpath("logo.svg")) as logo_path:
+             self.setWindowIcon(QIcon(str(logo_path)))
 
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
@@ -55,7 +58,7 @@ class HomeView(QMainWindow):
         self.layout.addStretch()
         self.layout.addWidget(self.title, alignment=Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.input_field, alignment=Qt.AlignmentFlag.AlignCenter)
+        self.layout.addWidget(self.enter_button, alignment=Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.rect, alignment=Qt.AlignmentFlag.AlignCenter)
         self.layout.addWidget(self.save_button, alignment=Qt.AlignmentFlag.AlignCenter)
-        self.layout.addWidget(self.enter_button, alignment=Qt.AlignmentFlag.AlignCenter)
         self.layout.addStretch()

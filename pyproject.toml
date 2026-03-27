@@ -13,6 +13,13 @@ dependencies = [
     "qrcode>=8.2",
 ]
 
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-qt>=4.5.0",
+    "ruff>=0.15.7",
+]
+
 [project.scripts]
 dev = "best_qr_code_generator.__main__:main"
 
@@ -20,8 +27,6 @@ dev = "best_qr_code_generator.__main__:main"
 requires = ["uv_build>=0.9.28,<0.10.0"]
 build-backend = "uv_build"
 
-[dependency-groups]
-dev = [
-    "pytest>=9.0.2",
-    "ruff>=0.15.7",
-]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"

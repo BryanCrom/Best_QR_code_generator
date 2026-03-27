@@ -3,7 +3,7 @@
 
 from PyQt6.QtWidgets import QPushButton
 
-from best_qr_code_generator.controllers.Controller import on_enter
+from best_qr_code_generator.controllers.controller import on_enter
 from best_qr_code_generator.views.components.SaveButton import SaveButton
 
 
