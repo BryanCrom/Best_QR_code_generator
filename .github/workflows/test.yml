@@ -41,8 +41,7 @@ jobs:
     - name: Install dependencies
       run: uv sync --dev
 
-    - name: Install virtual display
-      run: sudo apt-get install -y xvfb
-
     - name: Start tests
-      run: xvfb-run uv run pytest -v --tb=short --color=yes
+      run: uv run pytest -v --tb=short --color=yes
+      env:
+        QT_QPA_PLATFORM: offscreen
