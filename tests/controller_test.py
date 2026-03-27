@@ -23,7 +23,7 @@ class TestController:
         """
         on_enter("google.com", setup_gui.rect.image, setup_gui.save_button)
 
-        assert setup_gui.save_button.isEnabled() == True
+        assert setup_gui.save_button.isEnabled()
         assert setup_gui.rect.image.pixmap() is not None
         assert not setup_gui.rect.image.pixmap().isNull()
         assert setup_gui.rect.image.pixmap().size().width() > 0
